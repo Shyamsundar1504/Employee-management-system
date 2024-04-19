@@ -1,0 +1,30 @@
+<div class="container p-5">
+  <h2>Employee List:</h2>
+  <table class=" table table-primary table-striped">
+
+    <thead>
+      <tr>
+        <th class="bg-primary text-white">Id</th>
+        <th class="bg-primary text-white">First Name</th>
+        <th class="bg-primary text-white">Last Name</th>
+        <th class="bg-primary text-white">Email</th>
+        <th class="bg-primary text-white">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.email}}</td>
+        <td>
+          <button type="submit" (click)="updateEmployee(employee.id)" class="btn btn-sm  btn-info"><i class="fa-regular fa-pen-to-square"></i> Update</button>
+          <button type="submit" (click)="deleteEmployee(employee.id)"  class="btn btn-sm btn-danger ms-1"><i class="fa-solid fa-trash "></i> Delete</button>
+          <button type="submit" (click)="viewEmployee(employee.id)" class="btn btn-sm btn-info ms-1"><i class="fa-solid fa-eye"></i> View Details</button>
+          
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
